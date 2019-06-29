@@ -47,6 +47,7 @@ In this script, some of the basic modules in the Python programming language wer
 
 The sigmoid function has already been mentioned. The method that calculates the derivative of the sigmoid function is defined as sigmoidDerivation.
 <br>The derivative of sigmoid function is simply
+
 $$Z' = Z \cdot (1 - Z)$$
 
 
