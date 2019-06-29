@@ -35,11 +35,15 @@ For this project, a single neuron with three input parameters and one output was
 
 Mathematically, the sigmoid function can be represented as:
 
-$$ θ = {1 \over 1 + e^{-Z}} $$
+<p align="center"> 
+<img src="./ignore/sigmoid.png" width="105"/>
+</p>
 
 Where Z represents the sum of all products of the input (X) and the weight (W).
 
-'$$ Z = \sum_{i=1}^{n} Xi \cdot Wi + b $$'
+<p align="center"> 
+<img src="./ignore/Z.png" width="150"/>
+</p>
 
 ### Commenting a code
 In this script, some of the basic modules in the Python programming language were used, and these are numpy, pandas, time, and csv.
@@ -47,7 +51,9 @@ In this script, some of the basic modules in the Python programming language wer
 The sigmoid function has already been mentioned. The method that calculates the derivative of the sigmoid function is defined as sigmoidDerivation.
 <br>The derivative of sigmoid function is simply
 
-$$ Z' = Z \cdot (1 - Z) $$
+<p align="center"> 
+<img src="./ignore/Z'.png" width="118"/>
+</p>
 
 
 ```python
