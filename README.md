@@ -1,4 +1,4 @@
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 # Problem
 This code can find application for several problems.
 Specifically, here is an example of a prediction of whether a visitor in a store will buy a computer or not.
