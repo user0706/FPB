@@ -3,8 +3,6 @@ import pandas as pd
 import time
 import csv
 
-
-
 def sigmoid(x):  
     return 1/(1+np.exp(-x))
 def sigmoidDerivation(x):  
@@ -23,47 +21,37 @@ arrayOfSamples = np.array(setOfSamples)
 labels = np.array([customerDecisions])  
 labels = labels.reshape(len(customerDecisions),1)
 
+visitor_info = [float(input('Please enter a value for {}: '.format(i))) for i in ['age', 'income', 'employed']]
+
 np.random.seed(50)  
 weights = np.random.rand(3,1)
 bias = np.random.rand(1)  
 learningRate = 0.05 
 iteration = 20000
-#bar = ChargingBar('Processing', max=iteration)
 
 for epoch in range(iteration):  
     inputs = arrayOfSamples
 
-    # feedforward step1
-    XW = np.dot(arrayOfSamples, weights) + bias
+    # Feedforward
+    Z = np.dot(arrayOfSamples, weights) + bias
+    s = sigmoid(Z)
 
-    #feedforward step2
-    z = sigmoid(XW)
+    # Backpropagation
+    error = s - labels
+    dpred_ds = sigmoidDerivation(s)
 
-    # backpropagation step 1
-    error = z - labels
-
-    #print(error.sum())
-
-    # backpropagation step 2
-    dcost_dpred = error
-    dpred_dz = sigmoidDerivation(z)
-
-    z_delta = dcost_dpred * dpred_dz
+    s_delta = error * dpred_ds
 
     inputs = arrayOfSamples.T
-    weights -= learningRate * np.dot(inputs, z_delta)
+    weights -= learningRate * np.dot(inputs, s_delta)
 
-    for num in z_delta:
+    for num in s_delta:
         bias -= learningRate * num
-    
-    #bar.next()
-#bar.finish()
 
-single_point = np.array([19,1,1])  
-result = sigmoid(np.dot(single_point, weights) + bias)  
+instance = np.array(visitor_info)  
+result = sigmoid(np.dot(instance, weights) + bias)  
 
-print('')
 if result >= 0.5:
-    print('Da, kupice')
+    print('\nThere is a possibility that the visitor will buy a computer.')
 else:
-    print('Ne, nece kupiti')
+    print('\nThe chance that the visitor will buy a computer is small.')
