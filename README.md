@@ -1,4 +1,3 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 # Problem
 This code can find application for several problems.
 Specifically, here is an example of a prediction of whether a visitor in a store will buy a computer or not.
@@ -40,7 +39,7 @@ $$ θ = {1 \over 1 + e^{-Z}} $$
 
 Where Z represents the sum of all products of the input (X) and the weight (W).
 
-$$ Z = \sum_{i=1}^{n} Xi \cdot Wi + b $$
+'$$ Z = \sum_{i=1}^{n} Xi \cdot Wi + b $$'
 
 ### Commenting a code
 In this script, some of the basic modules in the Python programming language were used, and these are numpy, pandas, time, and csv.
